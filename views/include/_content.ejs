@@ -1,0 +1,74 @@
+ <!-- ADD MAIN CONTENT -->
+            <div class="content_main">
+                <div class="container">
+                    <div class="content_main_head">
+                        <div class="content_main_heading">
+                            <h2>Employees List</h2>
+                        <select name="" id="">
+                            <option value="">10</option>
+                            <option value="">20</option>
+                            <option value="">30</option>
+                        </select>
+                        <h6>of 10</h6>
+                        </div>
+                        <div class="content_main_action">
+                            <!-- <a href=""> -->
+                                <button  id="addBtn">Add Employee</button>
+                            <!-- </a> -->
+                        </div>
+                    </div>
+                    <div class="employee_table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sl.No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Gender</th>
+                                    <th>DOB</th>
+                                    <th>Country</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeTable">
+                                <% for(var i=0;i<users.length;i++) {%>
+                               <tr>
+                                <td><%=i+1%></td>
+                                <td><%= users[i].firstname %></td>
+                                <td><%= users[i].email %></td>     
+                                <td><%= users[i].number %></td>   
+                                <td><%= users[i].gender %></td> 
+                                <td><%= users[i].dob %></td>     
+                                <td><%= users[i].country %></td>              
+                                <!-- <td class="absolute"><button>...</button></td>   -->
+                                <td>
+                                <button id="dropdownAction-${employee.id}" onclick="openbtn(event);">...</button>
+                                    <div class="buttonDropdown">
+                                    <a href="/details?id=<%= users[i]._id %>"><button class="action"><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action"></i>View Details</button></a>
+                                    <!-- <a class="action" ><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action">View Details</i></a> -->
+                                    <!-- <button class="action" id="edit_btn"><i class="fa fa-sharp fa-light fa-pen" ></i>Edit</button> -->
+                                    <a  class="action edit" data-id=<%= users[i]._id %> id="edit_btn"><i class="fa fa-sharp fa-light fa-pen" >Edit</i></a>
+                                    <!-- <button class="action"><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action"></i>Delete</button> -->
+                                    <a class="action delete" data-id=<%= users[i]._id %>><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action">Delete</i></a>
+                                    </div>
+                                </td>
+                               </tr>
+                               <%}%>                                                                   
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="pagination">
+                <a class="double_left" href=""></a>
+                <a class="single_left" href=""></a>
+                <a class="active" href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">...</a>
+                <a href="">10</a>
+                <a class="single_right" href=""></a>
+                <a class="double_right" href=""></a>
+            </div>

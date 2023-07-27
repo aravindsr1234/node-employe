@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Employee</title>
+</head>
+<body>
+     <!-- PAGE WRAPPER -->
+ <div class="wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 class="sidebar_branding">Employee <br> <span>Management</span></h2>
+
+        <hr class="sidebar_divider">
+
+        <nav class="sidebar_nav">
+            
+        <ul>
+            <li class="Dashboard">
+                <a class="" href="/html/index.html">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="employee">
+                <a class="" href="/html/employee.html">
+                    <span>Employee</span>
+                </a>
+            </li>
+            <li class="my_profile">
+                <a class="" href="">
+                    <span>My Profile</span>
+                </a>
+            </li>
+            <li class="Logout">
+                <a class="" href="">
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>    
+
+        </nav>
+
+        <hr class="sidebar_divider">
+
+        <div class="sidebar_footer">
+            <!-- <span>Powered by <img src="/img/image 1.png" alt=""></span> -->
+            <h3>Powered by</h3>
+            <img src="/img/image 1.png" alt="">
+        </div>
+
+    </div>
+    <!-- SIDEBAR END-->
+
+      <!-- CONTENT WRAPPER -->
+  <div class="content_wrapper">
+    <div class="content_navbar">
+        <div class="breadcrumb">
+            <ul>
+                <li class="navbarLi"><a href="/html/index.html">Dashboard</a></li>
+                <li class="navbarLi"><a href="/html/employee.html">Employee</a></li>
+            </ul>
+            <div class="nav_head"><h3>Employees</h3></div>
+        </div>
+        <div class="content_navbar_action">
+            <div class="box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="Search" placeholder="Search">
+                <img src="/img/Avatar.png" alt="">
+            </div>
+        </div>
+    </div>
+     <!-- ADD MAIN CONTENT -->
+     <div class="content_main">
+        <div class="container">
+            <div class="content_main_head">
+                <div class="content_main_heading">
+                    <h2>Employees List</h2>
+                <select name="" id="">
+                    <option value="">10</option>
+                    <option value="">20</option>
+                    <option value="">30</option>
+                </select>
+                <h6>of 10</h6>
+                </div>
+                <div class="content_main_action">
+                    <!-- <a href=""> -->
+                        <button  id="addBtn">Add Employee</button>
+                    <!-- </a> -->
+                </div>
+            </div>
+            <div class="employee_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Country</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTable">
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td>
+                            <td class="absolute"><button>...</button></td>                                    
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td> 
+                            <td><button>...</button></td>                                   
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td>  
+                            <td><button>...</button></td>                                  
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td> 
+                            <td><button>...</button></td>                                   
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td>
+                            <td><button>...</button></td>                                    
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td> 
+                            <td><button>...</button></td>                                   
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td> 
+                            <td><button>...</button></td>                                   
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td class="name"> <img src="/img/Rectangle 346.png" alt="">Mr.Aravind</td>
+                            <td>Aravind@gmail.com</td>
+                            <td>983647592</td>
+                            <td>male</td>
+                            <td>01/02/2023</td>
+                            <td>india</td>
+                            <td><button>...</button></td>                                    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    <div class="pagination">
+        <a class="double_left" href=""></a>
+        <a class="single_left" href=""></a>
+        <a class="active" href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">...</a>
+        <a href="">10</a>
+        <a class="single_right" href=""></a>
+        <a class="double_right" href=""></a>
+    </div>
+    <hr class="content_divider">
+<div class="content_footer">
+    <div class="copywrite">
+        <h3>&copy 2023 All Rights Reserved.Stackup</h3>
+    </div>
+    <div class="terms_privacy">
+        <h3>Terms of Use</h3>
+        <h3>Privacy Policy</h3>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
