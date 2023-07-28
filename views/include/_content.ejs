@@ -46,14 +46,13 @@
                                 <button id="dropdownAction-${employee.id}" onclick="openbtn(event);">...</button>
                                     <div class="buttonDropdown">
                                     <a href="/details?id=<%= users[i]._id %>"><button class="action"><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action"></i>View Details</button></a>
-                                    <!-- <a class="action" ><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action">View Details</i></a> -->
-                                    <!-- <button class="action" id="edit_btn"><i class="fa fa-sharp fa-light fa-pen" ></i>Edit</button> -->
-                                    <a  class="action edit" data-id=<%= users[i]._id %> id="edit_btn"><i class="fa fa-sharp fa-light fa-pen" >Edit</i></a>
-                                    <!-- <button class="action"><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action"></i>Delete</button> -->
-                                    <a class="action delete" data-id=<%= users[i]._id %>><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action">Delete</i></a>
+
+                                    <button class="action" onclick="editEmployee('<%= users[i]._id %>')"><i class="fa fa-sharp fa-light fa-pen" id="buttonDropdown_action"></i>Edit</button>
+
+                                    <button class="action" onclick="deleteEmployee('${employee.id}')"><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action"></i>Delete</button>
                                     </div>
                                 </td>
-                               </tr>
+                               </tr>    
                                <%}%>                                                                   
                             </tbody>
                         </table>

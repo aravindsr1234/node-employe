@@ -35,5 +35,5 @@ exports.details = (req,res) => {
 }
 
 exports.update_user = (req,res) => {
-  res.sent('hello');
+  
 }
