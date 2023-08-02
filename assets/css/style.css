@@ -756,3 +756,30 @@ td button{
     visibility: hidden;
     opacity: 0;
 }
+
+
+/* =============================================== */
+.login_header ul{
+    display: flex;
+    justify-content: space-between;
+}
+.container_login{
+    width: 100vw;
+}
+.login{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginAlign{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 50px;
+}
+.login button{
+    margin-left: 150px;
+}
+
+
+/* ===========================================================================0 */

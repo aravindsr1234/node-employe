@@ -175,11 +175,30 @@ function deleteEmployee(id) {
             if(response.ok) {
                 console.log(response);
                 // alert("Employee deleted successfully");
-                fetchemployee();
+                
                 delete_bg.classList.remove('delete_active');
+                location.reload()
             }            
         })
     })
+}
+
+function viewEmployee(employeeId) {
+    const url = '';
+    const obj = {
+        id:employeeId,
+    }
+    const searchParams = new URLSearchParams(obj);
+
+    const queryString = searchParams.toString();
+
+    window.location.href = url + queryString;
+}
+
+
+function openbtn(event){
+    targetElement = event.target.nextElementSibling;
+    targetElement.classList.toggle("selected");
 }
 
 

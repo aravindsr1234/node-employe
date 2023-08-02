@@ -1,0 +1,71 @@
+<div>
+    <h3>Register page</h3>
+    <form action="/register" method="POST" onsubmit="registerValidation();">
+        <div class="input-group">
+            <div class="input-group">
+                <!-- <label for="username">username:</label> -->
+                <input type="text" name="username" id="username" placeholder="Username">
+                <div class="error" id="usernameErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
+            </div>
+            <div class="input-group">
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" name="email" id="email" placeholder="Email">
+                <div class="error" id="emailErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
+            </div>
+            <div class="input-group">
+                <!-- <label for="password">password:</label> -->
+                <input type="password" name="password" id="password" placeholder="password">
+                <div class="error" id="passwordErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
+            </div>
+            <div class="register">
+            <button>Register</button>
+        </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function registerValidation() {
+
+    const registerUsername = document.getElementById('username').value;
+    const registerEmail = document.getElementById('email').value;
+    const registerPassword = document.getElementById('password').value;
+
+    var usernameErr= emailErr = passwordErr = true;
+
+
+    if(registerUsername == "") {
+        printError("usernameErr", "Please enter your username");
+    } else {
+        var regex =  /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
+        if(regex.test(registerUsername) === false) {
+            printError("usernameErr", "Please enter a valid username");
+        } else{
+            printError("usernameErr", "");
+            emailErr = false;
+        }
+    }
+
+    if(registerEmail == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        var regex =  /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
+        if(regex.test(registerEmail) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+}
+
+
+
+
+
+
+</script>

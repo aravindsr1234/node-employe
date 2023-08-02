@@ -1,0 +1,56 @@
+.landing_container{
+    max-width: 1064px;
+    margin: 0 auto;
+    text-align:  center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+body{
+    background-image: linear-gradient(rgb(32, 29, 29, 100), rgb(38, 38, 35));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing_style button{
+    padding: 15px 45px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+}
+.landing_style  a button {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500px;
+}
+input{
+    padding: 12px 135px 12px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.register{
+    text-align: center;
+    margin-top: 20px;
+}
+.register button{
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    border: none;
+    padding: 10px 15px;
+    
+}
+h3{
+    color: white;
+    font-size: 20px;
+    text-align: center;    
+}
+.backReg{
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    padding: 8px;border-radius: 10px;
+    border-radius: 19px 1px;
+}
