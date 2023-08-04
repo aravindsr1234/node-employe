@@ -1,7 +1,7 @@
 // alert('hello');
-$("#form").submit(function(event) {
-    alert("data inserted successfully");
-})
+// $("#form").submit(function(event) {
+//     alert("data inserted successfully");
+// })
 
 
 // if(window.location.pathname == "/") {
@@ -24,21 +24,21 @@ $("#form").submit(function(event) {
 // }
 
 
-if(window.location.pathname == "/") {
-    $onedit = $(".table tbody td a.edit");
-    $onedit.click(function() {
-        var id = $(this).attr("data-id")
+// if(window.location.pathname == "/") {
+//     $onedit = $(".table tbody td a.edit");
+//     $onedit.click(function() {
+//         var id = $(this).attr("data-id")
 
-        var request = {
-            "url"  :`http://localhost:3001/api/users/${id}`,
-            "method" : "GET"
-        }
+//         var request = {
+//             "url"  :`http://localhost:3001/api/users/${id}`,
+//             "method" : "GET"
+//         }
 
-        $.ajax(request)
-        .done(function(data) {
-            console.log(data);
-        })        
+//         $.ajax(request)
+//         .done(function(data) {
+//             console.log(data);
+//         })        
 
 
-    })
-}
+//     })
+// }

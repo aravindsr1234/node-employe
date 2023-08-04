@@ -71,7 +71,7 @@ function fetchemployee() {
 
             const actionCell = document.createElement("td");
             actionCell.innerHTML =`
-            <button id="dropdownAction-${employee.id}" onclick="openbtn(event);">...</button>
+            <button id="dropdownAction-${employee.id}" onclick="openbtn(event)">...</button>
             <div class="buttonDropdown">
             <button class="action" onclick="viewEmployee('${employee._id}')"><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action"></i>View Details</button>
             <button class="action" onclick="editEmployee('${employee._id}')"><i class="fa fa-sharp fa-light fa-pen" id="buttonDropdown_action"></i>Edit</button>
@@ -184,15 +184,10 @@ function deleteEmployee(id) {
 }
 
 function viewEmployee(employeeId) {
-    const url = '';
-    const obj = {
-        id:employeeId,
-    }
-    const searchParams = new URLSearchParams(obj);
-
-    const queryString = searchParams.toString();
-
-    window.location.href = url + queryString;
+    const url = 'http://localhost:3001/details?';
+    const id = employeeId;
+    
+    window.location.href = url + id;
 }
 
 

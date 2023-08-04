@@ -1,29 +1,31 @@
-<div>
-    <a class="backReg" href="/register">
-         Register</a>
-            <h3>login page</h3>
-            <form action="/login" method="POST" id="loginForm">
-                <div class="input-group">
-                    <!-- <label for="email">Email:</label> -->
-                    <input type="email" name="email" id="loginEmail" placeholder="Email">
-                    <div class="error" id="emailErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
-                </div>
-                <div class="input-group">
-                    <!-- <label for="password">password:</label> -->
-                    <input type="password" name="password" id="loginPassword" placeholder="password">
-                    <div class="error" id="passwordErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
-                </div>
-                <div class="register">
+<div class="loginLDiv">
+    <div class="loginDiv">
+        <div class="loginHead"><h1>Log in</h1></div>
+        <form action="/login" method="POST" id="loginForm">
+            <div class="input-group">
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" name="email" id="loginEmail" placeholder="Email">
+                <div class="error" id="emailErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
+            </div>
+            <div class="input-group">
+                <!-- <label for="password">password:</label> -->
+                <input type="password" name="password" id="loginPassword" placeholder="password">
+                <div class="error" id="passwordErr" style="color: red; font-size: 16px; font-weight: bold;"></div>
+            </div>
+            <div class="register">
+                <button>login</button>
+            </div>
+        </form>
+    </div>
+    <!-- <a href="/register">Register</a> -->
+    <div class="loginImg">
+        <img src="/img/Vectors.png" alt="">
+    </div>
 
-                    <button>login</button>
-                </div>
-            </form>
-            <!-- <a href="/register">Register</a> -->
 </div>
 
 
 <script>
-
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -38,8 +40,5 @@
         }
         // handle submit
     });
-
-
-    
 
 </script>

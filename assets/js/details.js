@@ -3,7 +3,7 @@ let id = params.get("id");
 console.log(id);
 
 function  detailsEmployee(id) {
-    fetch(`http://localhost:3000/employees/${id}`, {
+    fetch(`http://localhost:3001/api/users/?${id}`, {
         method:"GET",
     })
     .then(res => res.json())
@@ -14,7 +14,7 @@ function  detailsEmployee(id) {
 
         employeeDetails.innerHTML = `
         <div class=" name_email">
-            <h3>${employee.firstName}</h3>
+            <h3>${employee.name}</h3>
             <h4>${employee.email}</h4>
         </div>
     <div class="details_col_3">    

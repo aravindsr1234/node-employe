@@ -13,6 +13,13 @@ var schema = new mongoose.Schema({
     country:String,
     state:String,
     city:String,
+    // image:String,
+    // created:{
+    //     type: Date,
+    //     required: true,
+    //     default: Date.now,
+    // }
+
 })
 
 const Userdb = mongoose.model('userdb', schema);

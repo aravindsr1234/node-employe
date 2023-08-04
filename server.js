@@ -9,7 +9,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoDBSession = require('connect-mongodb-session')(session);
 const UserModel = require('./server/models/User');
-
+const multer = require('multer');
 const app = express();
 
 // parse request to body-parser
@@ -154,4 +154,4 @@ app.listen(PORT, () => {console.log(`server is running on http://localhost:${POR
 
 
 // ========================================================
-// ============================================================
+// ========================================================

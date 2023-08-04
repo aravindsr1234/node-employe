@@ -22,7 +22,7 @@ body{
 }
 .wrapper{
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .sidebar_nav{
     flex: 1 !important;

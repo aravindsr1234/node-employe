@@ -1,7 +1,26 @@
 var Userdb = require('../model/model');
 
+// ======================================================================,,,================.===============.=====
+// const multer = require('multer'); 
+// // image upload
+// var storage = multer.diskStorage({
+//   destination: function(req, file, cb){
+//     cb(null, './uploads')
+//   },
+//   filename: function(req, file, cb){
+//     cb(null, file.fieldname +"_"+Date.now()+"_"+file.originalname); 
+//   },
+// });
+
+// var upload = multer({
+//   storage: storage,
+// }).single("image");
+
+
+// =======================.=======================.=============================.===============.=============
+
 // create and save
-exports.create = (req,res) => {
+exports.create =  (req,res) => {
     // validate req
     if(!req.body){
         res.status(400).send({message:"content can not be empty!"});
@@ -11,17 +30,18 @@ exports.create = (req,res) => {
     // new user
     const user = new Userdb({
         salutation:req.body.salutation,
-        firstname:req.body.firstname,
-        lastname:req.body.lastname,
+        firstname:req.body.firstName,
+        lastname:req.body.lastName,
         email:req.body.email,
         number:req.body.number,
         dob:req.body.dob,
         gender:req.body.gender,
-        qualification:req.body.qualification,
+        qualification:req.body.qualifications,
         address:req.body.address,
-        country:req.body.country,
+        country:req.body.countries,
         state:req.body.state,
-        city:req.body.city
+        city:req.body.city,
+        // image: req.file.filename
     })
 
     // save to database
@@ -29,7 +49,7 @@ exports.create = (req,res) => {
       .save(user)
       .then(data => {
         // res.send(data)
-        res.redirect('/')
+        res.redirect('/dashboard')
       })
       .catch(err =>{
         res.status(500).send({
@@ -53,7 +73,7 @@ exports.find = (req,res) => {
             }
           })
           .catch(err => {
-            res.status(500).send({message:error})
+            res.status(500).send({message:"error"})
           })
     }else{
         Userdb.find()

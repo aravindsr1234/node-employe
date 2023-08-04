@@ -1,6 +1,7 @@
-<div>
-    <h3>Register page</h3>
-    <form action="/register" method="POST" onsubmit="registerValidation();">
+<div class="loginLDiv">
+    <div class="loginDiv">
+        <div class="loginHead"><h1>Register</h1></div>
+    <form action="/register" method="POST" id="registerForm">
         <div class="input-group">
             <div class="input-group">
                 <!-- <label for="username">username:</label> -->
@@ -20,52 +21,77 @@
             <div class="register">
             <button>Register</button>
         </div>
-        </div>
     </form>
+    </div>
 </div>
 
 <script>
-    function printError(elemId, hintMsg) {
+
+
+function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
 
-function registerValidation() {
 
-    const registerUsername = document.getElementById('username').value;
-    const registerEmail = document.getElementById('email').value;
-    const registerPassword = document.getElementById('password').value;
+function registerValidation(){
+    const regUsername = document.getElementById('username').value;
+    const regEmail = document.getElementById('email').value;
+    const regPassword = document.getElementById('password').value;
 
-    var usernameErr= emailErr = passwordErr = true;
+    var usernameErr = emailErr = passwordErr = true ;
 
-
-    if(registerUsername == "") {
-        printError("usernameErr", "Please enter your username");
+    if (regUsername == "") {
+        printError("usernameErr", "Please enter your Username");
     } else {
-        var regex =  /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
-        if(regex.test(registerUsername) === false) {
-            printError("usernameErr", "Please enter a valid username");
-        } else{
+        var regex = /^[a-zA-Z\s]+$/;
+        if (regex.test(regUsername) === false) {
+            printError("usernameErr", "Please enter a valid Username");
+        } else {
             printError("usernameErr", "");
-            emailErr = false;
+            usernameErr = false;
         }
     }
 
-    if(registerEmail == "") {
+    if (regEmail == "") {
         printError("emailErr", "Please enter your email address");
     } else {
-        var regex =  /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
-        if(regex.test(registerEmail) === false) {
+        var regex = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
+        if (regex.test(regEmail) === false) {
             printError("emailErr", "Please enter a valid email address");
-        } else{
+        } else {
             printError("emailErr", "");
             emailErr = false;
         }
     }
+
+    if (regPassword == "") {
+        printError("passwordErr", "Please enter your password");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;
+        if (regex.test(regPassword) === false) {
+            printError("passwordErr", "Please enter a valid password");
+        } else {
+            printError("passwordErr", "");
+            passwordErr = false;
+        }
+    }
 }
 
 
+registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const registerForm = document.getElementById('registerForm');
+    let username = document.getElementById("username");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+
+    registerValidation();
+
+    if ( email.value != "" || username.value != "" || password.value != "") {
+        registerForm.submit();
+        }
+}) 
 
 
-
-
+    
 </script>
