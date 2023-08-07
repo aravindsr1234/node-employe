@@ -20,43 +20,43 @@ var Userdb = require('../model/model');
 // =======================.=======================.=============================.===============.=============
 
 // create and save
-exports.create =  (req,res) => {
-    // validate req
-    if(!req.body){
-        res.status(400).send({message:"content can not be empty!"});
-        return;
-    }
+// exports.create =  (req,res) => {
+//     // validate req
+//     if(!req.body){
+//         res.status(400).send({message:"content can not be empty!"});
+//         return;
+//     }
 
-    // new user
-    const user = new Userdb({
-        salutation:req.body.salutation,
-        firstname:req.body.firstName,
-        lastname:req.body.lastName,
-        email:req.body.email,
-        number:req.body.number,
-        dob:req.body.dob,
-        gender:req.body.gender,
-        qualification:req.body.qualifications,
-        address:req.body.address,
-        country:req.body.countries,
-        state:req.body.state,
-        city:req.body.city,
-        // image: req.file.filename
-    })
+//     // new user
+//     const user = new Userdb({
+//         salutation:req.body.salutation,
+//         firstname:req.body.firstName,
+//         lastname:req.body.lastName,
+//         email:req.body.email,
+//         number:req.body.number,
+//         dob:req.body.dob,
+//         gender:req.body.gender,
+//         qualification:req.body.qualifications,
+//         address:req.body.address,
+//         country:req.body.countries,
+//         state:req.body.state,
+//         city:req.body.city,
+//         // image: req.file.filename
+//     })
 
-    // save to database
-    user
-      .save(user)
-      .then(data => {
-        // res.send(data)
-        res.redirect('/dashboard')
-      })
-      .catch(err =>{
-        res.status(500).send({
-            message:err.message || "some error occurred while creating a create operation"
-        });
-      });
-}
+//     // save to database
+//     user
+//       .save(user)
+//       .then(data => {
+//         // res.send(data)
+//         res.redirect('/dashboard')
+//       })
+//       .catch(err =>{
+//         res.status(500).send({
+//             message:err.message || "some error occurred while creating a create operation"
+//         });
+//       });
+// }
 
 // GET
 exports.find = (req,res) => {

@@ -10,10 +10,15 @@
             </div>
             <div class="add_modal_content">
                 <form action="/api/users" method="POST" id="form" enctype="multipart/form-data">
-                    <input type="file" name="image">
                     <div id="uploadClick" onclick="uploadfiles()" class="card">
-                        <!-- <input class="form-control fileup" type="file" id="formFile"> -->
-                        <div class="upload">
+                        <input class="form-control fileup" type="file" name="image" id="formFile">
+                        <!-- ======== -->
+                        <!-- <input type="button" id="file_input" value="Upload Image"> -->
+                        <div id="imageSection" style="display: none;">
+                         <div id="image_preview"></div>
+                        </div>
+                        <!-- ================= -->
+                        <div class="upload" id="upload">
                             <i class="fa-solid fa-file-arrow-up upload_icon"></i>
                             <h6 class="text-primary">Upload Image</h6>
                             <!-- <button class="text-primary">Upload Image</button> -->

@@ -22,7 +22,7 @@ body{
 }
 .wrapper{
     display: flex;
-    /* height: 100vh; */
+    height: 100vh;
 }
 .sidebar_nav{
     flex: 1 !important;
@@ -577,8 +577,8 @@ td button{
     background-color: black;
 }
 .buttonDropdown{
-    /* visibility: hidden;
-    opacity: 0  ; */
+    visibility: hidden;
+    opacity: 0  ;
     background-color: white;
     display: grid;
     border: #D3D8E2;
@@ -780,6 +780,12 @@ td button{
 .login button{
     margin-left: 150px;
 }
-
+#fetchImage{
+    border-radius: 33px;
+}
+#alignImage{
+    display: flex;
+    align-items: center;
+}
 
 /* ===========================================================================0 */
