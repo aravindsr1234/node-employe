@@ -49,11 +49,12 @@ function fetchemployee() {
         // for(var i=(pageNumber-1)*10;i<(pageNumber*10)||employees.length;i++){
         //     const employee = employees[i];
         // }
-
+        var i=1;
         employees.forEach(employee => {
+           
         tableBody.innerHTML +=`
         <tr>
-            <td>1</td>
+            <td>${i}</td>
             <td id="alignImage"><img src="${employee.image}" width="50" id="fetchImage">${employee.firstname}</td>
             <td>${employee.email}</td>
             <td>${employee.number}</td>
@@ -69,60 +70,12 @@ function fetchemployee() {
              </div>
             </td>
         </tr>
-        `})
+       
+        `
+        i++;})
+        
 
-        // employees.forEach(employee => {
-        //     const row = document.createElement("tr");
-
-        //     const salutationCell = document.createElement("td");
-        //     salutationCell.textContent = employee.salutation;
-
-        //     const imageElement = document.createElement("img");
-        //     imageElement.src = employee.image;
-            
-        //     const nameCell = document.createElement("td");
-        //     nameCell.textContent = employee.firstname;
-            
-
-        //     const emailCell = document.createElement("td"); 
-        //     emailCell.textContent = employee.email;
-
-        //     const phoneCell = document.createElement("td");
-        //     phoneCell.textContent = employee.number;
-
-        //     const genderCell = document.createElement("td");
-        //     genderCell.textContent = employee.gender;
-
-        //     const dobCell = document.createElement("td");
-        //     dobCell.textContent = employee.dob;
-
-        //     const countryCell = document.createElement("td");
-        //     countryCell.textContent = employee.country;
-
-        //     const actionCell = document.createElement("td");
-        //     actionCell.innerHTML =`
-        //     <button id="dropdownAction-${employee.id}" onclick="openbtn(event)">...</button>
-        //     <div class="buttonDropdown">
-        //     <button class="action" onclick="viewEmployee('${employee._id}')"><i class="fa fa-sharp fa-light fa-eye" id="buttonDropdown_action"></i>View Details</button>
-        //     <button class="action" onclick="editEmployee('${employee._id}')"><i class="fa fa-sharp fa-light fa-pen" id="buttonDropdown_action"></i>Edit</button>
-        //     <button class="action" onclick="deleteEmployee('${employee._id}')"><i class="fa fa-sharp fa-light fa-trash" id="buttonDropdown_action"></i>Delete</button>
-        //     </div>
-        //     `
-
-        //     row.appendChild(salutationCell);
-        //     row.appendChild(nameCell);
-        //     row.appendChild(imageElement);
-        //     row.appendChild(emailCell);
-        //     row.appendChild(phoneCell);
-        //     row.appendChild(genderCell);
-        //     row.appendChild(dobCell);
-        //     row.appendChild(countryCell);
-        //     row.appendChild(actionCell);
-
-
-        //     tableBody.appendChild(row);
-
-        // })
+       
     })
 }
 

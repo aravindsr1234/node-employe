@@ -1,5 +1,12 @@
 
 const axios = require('axios');
+const express = require('express');
+const app = express();
+
+// exports.details = (req,res) => {
+//   res.render('details')
+// }
+
 
 
 exports.homeRoutes = (req,res) =>{
@@ -34,6 +41,8 @@ exports.details = (req,res) => {
       res.send(err);
     })
 }
+
+
 
 exports.update_user = (req,res) => {
   

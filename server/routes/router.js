@@ -3,6 +3,8 @@ const route = express.Router();
 const controller = require('../controller/controller');
 var Userdb = require('../model/model');
 const multer = require('multer');   
+const nodemailer = require('nodemailer');
+
 
 const services = require('../services/render');
 
@@ -26,7 +28,7 @@ var upload = multer({
 }).single('image');
 
 // INSERT AN USER INTO DATABASE ROUTE
-route.post('/api/users', upload, (req, res) => {
+route.post('/api/users', upload, async (req, res) => {
         // validate req
         if(!req.body){
             res.status(400).send({message:"content can not be empty!"});
@@ -49,19 +51,52 @@ route.post('/api/users', upload, (req, res) => {
             city:req.body.city,
             image: req.file.filename,
         })
+        try {
+            // Save to the database
+            const data = await  user.save();
+        
+           
+            var transporter = nodemailer.createTransport({
+              host: "sandbox.smtp.mailtrap.io",
+              port: 2525,
+              auth: {
+                user: "1e274c4e15e6bd",
+                pass: "6449786b7d30ea"
+              }
+            });
+        
+            const mailOptions = {
+              from: 'aravind@gmail.com', 
+              to: req.body.email,
+              subject: 'Welcome to Our Company!', 
+              html: `<p>Dear ${req.body.firstName},</p><p>Welcome to our company.</p>`, 
+            };
+        
+            const info = await transporter.sendMail(mailOptions);
+            // console.log('Email sent: ', info.messageId);
+        
+            res.redirect('/dashboard');
+          }
+          catch (err) {
+            res.status(500).send({
+              message: err.message || "Some error occurred while creating a create operation",
+            });
+          }
     
         // save to database
-        user
-          .save(user)
-          .then(data => {
-            // res.send(data)
-            res.redirect('/dashboard')
-          })
-          .catch(err =>{
-            res.status(500).send({
-                message:err.message || "some error occurred while creating a create operation"
-            });
-          });
+        // user
+        //   .save(user)
+        //   .then(data => {
+        //     // res.send(data)
+        //     res.redirect('/dashboard')
+        //   })
+
+          
+        //   .catch(err =>{
+        //     res.status(500).send({
+        //         message:err.message || "some error occurred while creating a create operation"
+        //     });
+        //   });
 })
 // ==.==================.=============================.========================.==
 

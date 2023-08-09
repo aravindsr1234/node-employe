@@ -61,7 +61,7 @@ var Userdb = require('../model/model');
 // GET
 exports.find = (req,res) => {
 
-    if(req.query.id){
+    if(req.params.id){
         const id = req.query.id;
 
         Userdb.findById(id)
