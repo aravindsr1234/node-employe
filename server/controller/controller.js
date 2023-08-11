@@ -60,6 +60,9 @@ var Userdb = require('../model/model');
 
 // GET
 exports.find = (req,res) => {
+  // Pagination
+  const { page, limit } = req.query;
+  const skip = (page - 1) * (limit || 10);
 
     if(req.params.id){
         const id = req.query.id;
@@ -76,7 +79,7 @@ exports.find = (req,res) => {
             res.status(500).send({message:"error"})
           })
     }else{
-        Userdb.find()
+        Userdb.find().skip(skip).limit(parseInt(limit) || 10)
     .then(user => {
         res.send(user)
         console.log(user);
@@ -129,4 +132,30 @@ exports.delete = (req,res) => {
             message:"could not delete user with id=" +id
         });
       });
+}
+
+
+// serch
+exports.search = async (req, res) => {
+  const searchTerm = req.query.term;
+
+  try {
+    const result = await Userdb.findOne({
+      $or: [
+        { firstName: searchTerm },
+        { lastName: searchTerm },
+        { email: searchTerm },
+        { position: searchTerm },
+      ],
+    });
+
+    if (result) {
+      res.json(result);
+    } else {
+      res.json({ message: 'No employee found' });
+    }
+  } catch (error) {
+    console.error('Error searching:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }

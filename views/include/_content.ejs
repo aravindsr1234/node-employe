@@ -4,10 +4,10 @@
                     <div class="content_main_head">
                         <div class="content_main_heading">
                             <h2>Employees List</h2>
-                        <select name="" id="">
-                            <option value="">10</option>
-                            <option value="">20</option>
-                            <option value="">30</option>
+                        <select name="" id="pageSize">
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
                         </select>
                         <h6>of 10</h6>
                         </div>
@@ -16,6 +16,10 @@
                                 <button  id="addBtn">Add Employee</button>
                             <!-- </a> -->
                         </div>
+                    </div>
+                    <div class="alert hide" id="alert">
+                        <span class="material-symbols-outlined" id="alertIcon"></span>
+                        <span class="msg" id="alertMsg"></span>
                     </div>
                     <div class="employee_table">
                         <table class="table">
@@ -39,14 +43,6 @@
                 </div>
                 
             </div>
-            <div class="pagination">
-                <a class="double_left" href=""></a>
-                <a class="single_left" href=""></a>
-                <a class="active" href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">...</a>
-                <a href="">10</a>
-                <a class="single_right" href=""></a>
-                <a class="double_right" href=""></a>
+            <div class="pagination" id="pagination">
+                
             </div>

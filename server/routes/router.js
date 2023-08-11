@@ -69,7 +69,46 @@ route.post('/api/users', upload, async (req, res) => {
               from: 'aravind@gmail.com', 
               to: req.body.email,
               subject: 'Welcome to Our Company!', 
-              html: `<p>Dear ${req.body.firstName},</p><p>Welcome to our company.</p>`, 
+              html: ` <html>
+              <head>
+                <style>
+                  body {
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                  }
+                  h1 {
+                    color: #333;
+                  }
+                  p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                  }
+                  .container {
+                    text-align: center;
+                    background-color: #f4f4f4;
+                    padding: 30px;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                  }
+                  .logo {
+                    max-width: 150px;
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <img src="/img/images.png" alt="Company Logo" class="logo">
+                  <h1>Welcome to Our Company, ${req.body.firstName}!</h1>
+                  <p>
+                    Thank you for joining us. We are excited to have you as part of our team.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, justo ut convallis luctus,
+                    risus mi viverra orci, a volutpat orci ante at metus.
+                  </p>
+                  <p>Best regards,</p>
+                  <p>The Our Company Team</p>
+                </div>
+              </body>
+            </html>`, 
             };
         
             const info = await transporter.sendMail(mailOptions);
@@ -104,6 +143,7 @@ route.post('/api/users', upload, async (req, res) => {
 route.get('/api/users', controller.find);
 route.put('/api/users/:id', controller.update);
 route.delete('/api/users/:id', controller.delete)
+route.search('/search', controller.search)
 
 
 

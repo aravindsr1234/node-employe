@@ -35,7 +35,7 @@ exports.homeRoutes = (req,res) =>{
 exports.details = (req,res) => {
   axios.get('http://localhost:3001/api/users',{params:{id:req.query.id}})
     .then(function(id){
-      res.render("details",{user: id.data})
+      res.render("details",{user: id.data});
     })
     .catch(err => {
       res.send(err);
